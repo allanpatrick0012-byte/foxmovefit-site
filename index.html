@@ -4,250 +4,375 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Fox Move Fit · Treino em casa, corrida e alimentação</title>
-<meta name="description" content="Desafio de 28 dias com vídeos, caminhada e corrida com GPS, plano alimentar com receitas brasileiras e treinos do seu personal. Tudo no seu ritmo.">
+<meta name="description" content="Desafio de 28 dias com vídeos, caminhada e corrida com GPS, plano alimentar com receitas brasileiras e treinos do seu personal. Entre na lista de espera do Fox Move Fit.">
 <meta property="og:title" content="Fox Move Fit">
 <meta property="og:description" content="Treino em casa, corrida e alimentação no seu ritmo.">
 <meta property="og:image" content="https://foxmovefit.com.br/img/og.jpg">
 <meta property="og:url" content="https://foxmovefit.com.br/">
+<meta property="og:type" content="website">
 <meta name="theme-color" content="#0b0d0c">
+<link rel="canonical" href="https://foxmovefit.com.br/">
 <link rel="icon" href="/favicon.png">
 <link rel="apple-touch-icon" href="/img/icone-192.png">
+<link rel="preload" as="image" href="/img/hero-lux.webp" media="(min-width: 861px)" fetchpriority="high">
+<link rel="preload" as="image" href="/img/hero-lux-m.webp" media="(max-width: 860px)" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/estilo.css?v=202611102126">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<!-- Ícones Material (os mesmos do app), só os usados aqui. -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,500,0..1,0&icon_names=accessibility_new,arrow_forward,assignment,bolt,chat,check,close,directions_run,eco,expand_more,favorite,fitness_center,group,healing,home,insights,local_fire_department,lock,mail,map,menu,monitor_weight,no_food,notifications,payments,person_add,photo_camera,restaurant,schedule,self_improvement,sell,signal_cellular_alt,speed,sports_gymnastics,star,timer,track_changes,trending_up,video_library,volume_off&display=block" rel="stylesheet">
+<link rel="stylesheet" href="/estilo.css?v=202611111">
 </head>
 <body>
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+
+<!--
+  Chamada principal única do site: "Entrar na lista de espera".
+  O app ainda não está público na Play Store (só teste interno); a lista de espera hoje é pelo WhatsApp de suporte.
+  Quando o app for publicado, troque WAITLIST pelo link da Play Store em todos os botões .js-cta.
+-->
 <header class="top">
-  <div class="wrap">
-    <a class="brand" href="/"><img src="/img/icone-192.png" alt=""><span><span class="fox">Fox</span> <span class="move">Move</span> <span class="fit">Fit</span></span></a>
-    <nav class="links">
+  <div class="wrap bar">
+    <a class="brand" href="/" aria-label="Fox Move Fit, página inicial"><img src="/img/icone-192.png" alt="" width="36" height="36"><span><span class="fox">Fox</span> <span class="move">Move</span> <span class="fit">Fit</span></span></a>
+    <nav class="links" id="menu" aria-label="Seções">
       <a href="#programas">Treinos</a>
       <a href="#corrida">Corrida</a>
-      <a href="#alimentacao">Dieta</a>
+      <a href="#alimentacao">Alimentação</a>
       <a href="#app">O app</a>
       <a href="#personal">Personal</a>
       <a href="#duvidas">Dúvidas</a>
     </nav>
-    <!-- Trocar pelo link da Play Store quando o app for publicado. -->
-    <a class="btn primary small cta" href="#app">Baixar app</a>
+    <a class="btn primary small cta-nav" href="https://wa.me/5541992341088?text=Quero%20entrar%20na%20lista%20de%20espera%20do%20Fox%20Move%20Fit" target="_blank" rel="noopener"><span class="hide-sm">Entrar na lista de espera</span><span class="show-sm">Lista de espera</span></a>
+    <button class="menu-btn" type="button" aria-controls="menu" aria-expanded="false" aria-label="Abrir menu"><span class="ms" aria-hidden="true">menu</span></button>
   </div>
 </header>
 
-<main>
-  <section class="hero">
-    <div class="bg" role="img" aria-label="Pessoa treinando calistenia em casa"></div>
-    <div class="wrap">
-      <div>
-        <div class="eyebrow">Treino · Corrida · Alimentação</div>
-        <h1>Seu dia.<br><span class="accent">Seu movimento.</span></h1>
-        <p class="lead">Treinos em casa com vídeo, caminhada e corrida com GPS e um plano alimentar com receitas brasileiras. Para quem está começando ou voltando a se mexer.</p>
-        <div class="ctas">
-          <a class="btn primary" href="#app">▶ Começar grátis</a>
-          <a class="btn ghost" href="#personal">Sou personal ou academia</a>
-        </div>
-        <div class="stats">
-          <div><b>28</b><span>dias de desafio</span></div>
-          <div><b>46</b><span>exercícios com vídeo</span></div>
-          <div><b>68</b><span>receitas com foto</span></div>
-        </div>
+<main id="conteudo">
+  <!-- 1. Topo (escuro) -->
+  <section class="hero" aria-labelledby="titulo">
+    <picture class="hero-pic">
+      <source media="(max-width: 860px)" srcset="/img/hero-lux-m.webp" width="900" height="675">
+      <img src="/img/hero-lux.webp" width="2000" height="1125" alt="Homem fazendo flexão em um estúdio escuro, com luz laranja" fetchpriority="high" decoding="async">
+    </picture>
+    <div class="wrap hero-txt">
+      <p class="eyebrow">Treino · Corrida · Alimentação</p>
+      <h1 id="titulo">Seu dia.<br><em>Seu movimento.</em></h1>
+      <p class="lead">Treinos em casa com vídeo, corrida com GPS e cardápio com receitas brasileiras. Para quem está começando ou voltando a se mexer.</p>
+      <div class="ctas">
+        <a class="btn primary big" href="https://wa.me/5541992341088?text=Quero%20entrar%20na%20lista%20de%20espera%20do%20Fox%20Move%20Fit" target="_blank" rel="noopener">Entrar na lista de espera <span class="ms" aria-hidden="true">arrow_forward</span></a>
+        <a class="btn ghost" href="#como-funciona">Ver como funciona</a>
       </div>
-      <div class="pillars">
-        <div class="pillar"><i>⚡</i><div><b>TREINE</b><span>Em casa, sem equipamento</span></div></div>
-        <div class="pillar"><i>🥗</i><div><b>ALIMENTE-SE</b><span>Cardápio da semana</span></div></div>
-        <div class="pillar"><i>💚</i><div><b>EVOLUA</b><span>Do seu jeito, sem pressa</span></div></div>
-      </div>
+      <p class="note">Lançamento em breve para Android. Avisamos você pelo WhatsApp.</p>
+      <ul class="stats" aria-label="O que tem no app">
+        <li><b>28</b><span>dias de desafio</span></li>
+        <li><b>46</b><span>exercícios com vídeo</span></li>
+        <li><b>68</b><span>receitas com foto</span></li>
+      </ul>
     </div>
   </section>
 
-  <section id="programas">
+  <!-- 2. Programas e objetivos (creme) -->
+  <section id="programas" class="sec cream" aria-labelledby="t-programas">
     <div class="wrap">
-      <div class="head">
-        <div><h2>Treinos para o seu ritmo</h2><p class="sub">Planos montados a partir do seu objetivo, nível e tempo disponível.</p></div>
-      </div>
+      <header class="head">
+        <p class="eyebrow">Programas</p>
+        <h2 id="t-programas">Treinos para o seu ritmo</h2>
+        <p class="sub">Montados a partir do seu objetivo, nível, dores e tempo disponível.</p>
+      </header>
       <div class="programs">
-        <article class="program" style="background-image:url(/img/hero.webp)">
-          <div><div class="ico">🔥</div><h3>Desafio 28 dias</h3><p>Um treino por dia, em casa. Os 7 primeiros dias são grátis.</p></div>
-          <span class="tag">Calistenia</span>
+        <article class="program">
+          <img src="/img/prog-desafio.webp" width="720" height="480" alt="Homem fazendo flexão em casa" loading="lazy" decoding="async">
+          <div class="pbody">
+            <span class="picon ms" aria-hidden="true">local_fire_department</span>
+            <h3>Desafio 28 dias</h3>
+            <p>Um treino por dia, em casa e sem equipamento. Os 7 primeiros dias são grátis.</p>
+            <ul class="meta"><li><span class="ms" aria-hidden="true">schedule</span>10 a 45 min</li><li><span class="ms" aria-hidden="true">signal_cellular_alt</span>Todos os níveis</li><li><span class="ms" aria-hidden="true">track_changes</span>Hábito e força</li></ul>
+          </div>
         </article>
-        <article class="program" style="background-image:url(/img/p-rapidos.webp)">
-          <div><div class="ico">⚡</div><h3>Treinos rápidos</h3><p>Sessões curtas para quando o tempo aperta.</p></div>
-          <span class="tag">5 a 15 min</span>
+        <article class="program">
+          <img src="/img/prog-rapidos.webp" width="480" height="480" alt="Mulher saltando em uma sala clara com plantas" loading="lazy" decoding="async">
+          <div class="pbody">
+            <span class="picon ms" aria-hidden="true">bolt</span>
+            <h3>Treinos rápidos</h3>
+            <p>Sessões curtas para quando o tempo aperta: core, pernas, braços e alongamento.</p>
+            <ul class="meta"><li><span class="ms" aria-hidden="true">schedule</span>5 a 15 min</li><li><span class="ms" aria-hidden="true">signal_cellular_alt</span>Iniciante</li><li><span class="ms" aria-hidden="true">track_changes</span>Encaixar no dia</li></ul>
+          </div>
         </article>
-        <article class="program" style="background-image:url(/img/p-exercicios.webp)">
-          <div><div class="ico">🎥</div><h3>Biblioteca de exercícios</h3><p>Vídeo em movimento e passo a passo de cada exercício.</p></div>
-          <span class="tag">46 exercícios</span>
+        <article class="program">
+          <img src="/img/prog-exercicios.webp" width="480" height="480" alt="Mulher fazendo avanço com a perna em uma sala clara" loading="lazy" decoding="async">
+          <div class="pbody">
+            <span class="picon ms" aria-hidden="true">video_library</span>
+            <h3>Biblioteca de exercícios</h3>
+            <p>46 exercícios com vídeo em movimento, passo a passo e cuidados.</p>
+            <ul class="meta"><li><span class="ms" aria-hidden="true">schedule</span>No seu tempo</li><li><span class="ms" aria-hidden="true">signal_cellular_alt</span>Do iniciante ao avançado</li><li><span class="ms" aria-hidden="true">track_changes</span>Técnica certa</li></ul>
+          </div>
         </article>
-        <article class="program" style="background-image:url(/img/p-corrida.webp)">
-          <div><div class="ico">🏃</div><h3>Caminhada e corrida</h3><p>GPS, ritmo, calorias e batimentos com relógio ou cinta.</p></div>
-          <span class="tag">Ao ar livre</span>
+        <article class="program">
+          <img src="/img/prog-corrida.webp" width="720" height="720" alt="Homem correndo em uma estrada no campo ao amanhecer" loading="lazy" decoding="async">
+          <div class="pbody">
+            <span class="picon ms" aria-hidden="true">directions_run</span>
+            <h3>Caminhada e corrida</h3>
+            <p>GPS com mapa do percurso, ritmo, calorias e batimentos.</p>
+            <ul class="meta"><li><span class="ms" aria-hidden="true">schedule</span>Livre</li><li><span class="ms" aria-hidden="true">signal_cellular_alt</span>Caminhada, corrida, pedal</li><li><span class="ms" aria-hidden="true">track_changes</span>Cardio</li></ul>
+          </div>
         </article>
       </div>
+
+      <h3 class="goals-title">Escolha seu objetivo</h3>
+      <ul class="goals">
+        <li><span class="ms" aria-hidden="true">fitness_center</span>Ganhar força</li>
+        <li><span class="ms" aria-hidden="true">monitor_weight</span>Emagrecer</li>
+        <li><span class="ms" aria-hidden="true">directions_run</span>Condicionamento</li>
+        <li><span class="ms" aria-hidden="true">self_improvement</span>Mobilidade</li>
+        <li><span class="ms" aria-hidden="true">accessibility_new</span>Postura e costas</li>
+        <li><span class="ms" aria-hidden="true">volume_off</span>Sem impacto</li>
+        <li><span class="ms" aria-hidden="true">home</span>Treinar em casa</li>
+        <li><span class="ms" aria-hidden="true">favorite</span>Saúde e bem-estar</li>
+      </ul>
     </div>
   </section>
 
-  <section class="goals">
-    <div class="wrap">
-      <div class="head"><div><h2>Para cada objetivo</h2><p class="sub">Do primeiro treino à rotina completa.</p></div></div>
-      <div class="goal-row">
-        <div class="goal"><i>💪</i>Força</div>
-        <div class="goal"><i>🔥</i>Emagrecer</div>
-        <div class="goal"><i>🏃</i>Cardio</div>
-        <div class="goal"><i>🧘</i>Mobilidade</div>
-        <div class="goal"><i>🎯</i>Core</div>
-        <div class="goal"><i>🦵</i>Pernas</div>
-        <div class="goal"><i>🩹</i>Sem impacto</div>
-        <div class="goal"><i>🏠</i>Em casa</div>
-      </div>
-    </div>
-  </section>
-
-  <section id="app" class="app">
-    <div class="wrap">
-      <div class="phones">
-        <div class="glow"></div>
-        <div class="phone a"><img src="/img/app-1.webp" alt="Tela Meu dia do app"></div>
-        <div class="phone b"><img src="/img/app-2.webp" alt="Tela do Desafio 28 dias"></div>
+  <!-- 3. O app (verde-floresta escuro) -->
+  <section id="app" class="sec forest" aria-labelledby="t-app">
+    <div class="wrap app">
+      <div class="phones" aria-hidden="false">
+        <figure class="phone p1"><img src="/img/app-meu-dia.webp" width="480" height="960" alt="Tela Meu dia: plano da semana e o treino do desafio" loading="lazy" decoding="async"></figure>
+        <figure class="phone p2"><img src="/img/app-desafio.webp" width="480" height="960" alt="Tela do Desafio 28 dias com modo dor e lembrete" loading="lazy" decoding="async"></figure>
+        <figure class="phone p3"><img src="/img/app-progresso.webp" width="480" height="960" alt="Tela de Progresso com sequência, treinos e calendário" loading="lazy" decoding="async"></figure>
       </div>
       <div>
-        <div class="eyebrow">O app Fox Move Fit</div>
-        <h2 style="margin-top:10px">Seu treino e sua alimentação <span class="accent">no bolso.</span></h2>
-        <p class="sub">Treinos guiados com vídeo, progresso, plano alimentar e lembretes. Funciona até sem internet.</p>
-        <div class="features">
-          <div class="feature"><i>📈</i><div><b>Progresso</b>Sequência, minutos e histórico.</div></div>
-          <div class="feature"><i>🩹</i><div><b>Modo dor</b>Troca exercícios que forçam a região.</div></div>
-          <div class="feature"><i>📸</i><div><b>Foto do prato</b>Calorias e macros da refeição.</div></div>
-          <div class="feature"><i>🔔</i><div><b>Lembretes</b>Treino e água no seu horário.</div></div>
-        </div>
-        <span class="store"><span style="font-size:26px">▶</span><span><small>EM BREVE NO</small><b>Google Play</b></span></span>
+        <p class="eyebrow">O app Fox Move Fit</p>
+        <h2 id="t-app">Seu treino e sua alimentação <em>no bolso.</em></h2>
+        <p class="sub">Telas reais do app. Treinos guiados com vídeo, que funcionam até sem internet depois de baixar os vídeos.</p>
+        <ul class="features">
+          <li><span class="fi ms" aria-hidden="true">insights</span><div><b>Progresso</b><span>Sequência de dias, minutos treinados e calendário.</span></div></li>
+          <li><span class="fi ms" aria-hidden="true">healing</span><div><b>Modo dor</b><span>Diga o que incomoda e o app troca os exercícios.</span></div></li>
+          <li><span class="fi ms" aria-hidden="true">photo_camera</span><div><b>Foto do prato</b><span>A IA estima os gramas; você confere e ajusta.</span></div></li>
+          <li><span class="fi ms" aria-hidden="true">notifications</span><div><b>Lembretes</b><span>De treino e de água, no seu horário.</span></div></li>
+        </ul>
+        <a class="btn primary" href="https://wa.me/5541992341088?text=Quero%20entrar%20na%20lista%20de%20espera%20do%20Fox%20Move%20Fit" target="_blank" rel="noopener">Entrar na lista de espera <span class="ms" aria-hidden="true">arrow_forward</span></a>
       </div>
     </div>
   </section>
 
-  <section id="corrida" class="split">
-    <div class="wrap">
-      <div class="media run">
-        <img src="/img/p-corrida.webp" alt="Pessoa correndo ao ar livre">
-        <div class="runcard">
-          <div class="eyebrow" style="color:var(--orange)">Corrida · hoje</div>
-          <div class="runbig">6,42 <small>km</small></div>
-          <div class="runrow"><div><b>45:30</b><span>tempo</span></div><div><b>7:05</b><span>ritmo /km</span></div><div><b>148</b><span>bpm</span></div></div>
-          <svg viewBox="0 0 200 60" class="route" aria-hidden="true"><path d="M5 50 C40 10, 70 55, 100 30 S160 5, 195 20" fill="none" stroke="#41ee92" stroke-width="4" stroke-linecap="round"/></svg>
-        </div>
-      </div>
+  <!-- 4. Corrida e GPS (sálvia) -->
+  <section id="corrida" class="sec sage" aria-labelledby="t-corrida">
+    <div class="wrap split">
       <div>
-        <div class="eyebrow">Caminhada · Corrida · Pedal</div>
-        <h2 style="margin-top:10px">Corra com GPS e <span class="accent">acompanhe cada quilômetro.</span></h2>
+        <p class="eyebrow">Caminhada · Corrida · Pedal</p>
+        <h2 id="t-corrida">Corra com GPS e <em>acompanhe cada quilômetro.</em></h2>
         <p class="sub">Comece a atividade, guarde o celular no bolso e o app registra tudo, mesmo com a tela apagada.</p>
         <ul class="ticks">
-          <li><strong>Mapa do percurso</strong>, distância, ritmo médio e calorias</li>
-          <li><strong>Batimentos cardíacos</strong> com relógio ou cinta Bluetooth</li>
-          <li><strong>Cartão para o Instagram</strong>: sua foto com o percurso e os números, do jeito que você montar</li>
-          <li>O percurso fica <strong>só no seu celular</strong>: privacidade em primeiro lugar</li>
+          <li><span class="ms" aria-hidden="true">map</span><span><b>Mapa do percurso</b>, distância, ritmo médio e calorias</span></li>
+          <li><span class="ms" aria-hidden="true">favorite</span><span><b>Batimentos</b> com cinta cardíaca ou relógio que transmite a frequência por Bluetooth</span></li>
+          <li><span class="ms" aria-hidden="true">photo_camera</span><span><b>Cartão para o Instagram</b> com sua foto, o percurso e os números</span></li>
+          <li><span class="ms" aria-hidden="true">lock</span><span>O percurso fica <b>só no seu celular</b>; na conta vai apenas o resumo</span></li>
         </ul>
       </div>
+      <figure class="runpanel" aria-label="Exemplo de atividade registrada no app">
+        <img class="runphoto" src="/img/p-corrida.webp" width="720" height="720" alt="Homem correndo em uma estrada de terra ao amanhecer" loading="lazy" decoding="async">
+        <div class="mapcard">
+          <svg viewBox="0 0 320 170" role="img" aria-label="Mapa de exemplo com o percurso da corrida">
+            <rect width="320" height="170" rx="14" fill="#EEF1E8"/>
+            <path d="M0 120 C60 110 90 150 160 135 S260 120 320 140 L320 170 L0 170Z" fill="#D7E4D2"/>
+            <path d="M210 0 C200 40 240 60 230 100 S250 150 240 170" stroke="#BFD9E8" stroke-width="10" fill="none"/>
+            <g stroke="#FFFFFF" stroke-width="6" fill="none"><path d="M0 40 H320"/><path d="M0 92 H320"/><path d="M70 0 V170"/><path d="M150 0 V170"/><path d="M280 0 V170"/></g>
+            <path d="M40 130 C55 95 70 70 110 62 S160 40 190 70 S250 110 270 60" stroke="#FF8A3D" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="40" cy="130" r="7" fill="#14352B"/><circle cx="270" cy="60" r="8" fill="#FF8A3D" stroke="#fff" stroke-width="3"/>
+          </svg>
+          <p class="example">Exemplo de atividade</p>
+          <dl class="runstats">
+            <div><dt>Distância</dt><dd>6,42 <small>km</small></dd></div>
+            <div><dt>Ritmo</dt><dd>7:05 <small>/km</small></dd></div>
+            <div><dt>Tempo</dt><dd>45:30</dd></div>
+            <div><dt>Batimentos</dt><dd>148 <small>bpm</small></dd></div>
+          </dl>
+        </div>
+      </figure>
     </div>
   </section>
 
-  <section id="alimentacao" class="split diet">
+  <!-- 5. Alimentação (branco quente) -->
+  <section id="alimentacao" class="sec warm" aria-labelledby="t-alim">
     <div class="wrap">
-      <div>
-        <div class="eyebrow">Dieta · Nutrição</div>
-        <h2 style="margin-top:10px">Uma dieta que <span class="accent">cabe na sua rotina.</span></h2>
-        <p class="sub">Cardápio da semana com comida de verdade, montado a partir do seu objetivo, peso e preferências.</p>
-        <div class="macro card">
-          <div class="macrotop"><div><b>1.850</b><span> de 2.100 kcal</span></div><span class="pill">Hoje</span></div>
-          <div class="bars">
-            <div><span>Proteína</span><i style="--v:78%;--c:#ff8a3d"></i><small>118 g</small></div>
-            <div><span>Carboidrato</span><i style="--v:64%;--c:#41ee92"></i><small>190 g</small></div>
-            <div><span>Gordura</span><i style="--v:55%;--c:#5cc8ff"></i><small>52 g</small></div>
-            <div><span>Água</span><i style="--v:70%;--c:#5cc8ff"></i><small>2,1 L</small></div>
+      <header class="head">
+        <p class="eyebrow">Alimentação</p>
+        <h2 id="t-alim">Comida de verdade, <em>no seu cardápio.</em></h2>
+        <p class="sub">Cardápio da semana com receitas brasileiras, respeitando sua dieta e suas alergias.</p>
+      </header>
+      <div class="food">
+        <article class="menu-day" aria-labelledby="t-cardapio">
+          <h3 id="t-cardapio">Exemplo de cardápio do dia</h3>
+          <ol class="meals">
+            <li><img src="/img/refeicao-03.webp" width="480" height="480" alt="Iogurte com morangos e granola em uma tigela" loading="lazy" decoding="async"><div><span class="when">Café da manhã</span><b>Iogurte com morango e granola</b></div><span class="kcal">265 kcal</span></li>
+            <li><img src="/img/refeicao-16.webp" width="480" height="480" alt="Prato com frango grelhado, arroz e feijão preto" loading="lazy" decoding="async"><div><span class="when">Almoço</span><b>Frango grelhado com arroz e feijão</b></div><span class="kcal">375 kcal</span></li>
+            <li><img src="/img/refeicao-33.webp" width="480" height="480" alt="Pote de homus com palitos de cenoura" loading="lazy" decoding="async"><div><span class="when">Lanche</span><b>Homus com palitos de cenoura</b></div><span class="kcal">265 kcal</span></li>
+            <li><img src="/img/refeicao-49.webp" width="480" height="480" alt="Omelete de abobrinha com salada de folhas e tomate" loading="lazy" decoding="async"><div><span class="when">Jantar</span><b>Omelete de abobrinha com salada</b></div><span class="kcal">205 kcal</span></li>
+          </ol>
+          <ul class="macros" aria-label="Total do dia de exemplo">
+            <li><b>1.110</b> kcal</li><li><b>70 g</b> proteína</li><li><b>117 g</b> carboidrato</li><li><b>43 g</b> gordura</li>
+          </ul>
+          <p class="fine">No app, as porções se ajustam à sua meta de calorias.</p>
+        </article>
+        <div class="food-side">
+          <div class="gallery">
+            <figure><img src="/img/refeicao-17.webp" width="480" height="480" alt="Tilápia grelhada com batata-doce e brócolis" loading="lazy" decoding="async"><figcaption>Tilápia com batata-doce e brócolis</figcaption></figure>
+            <figure><img src="/img/refeicao-18.webp" width="480" height="480" alt="Bowl de lentilha com legumes coloridos" loading="lazy" decoding="async"><figcaption>Bowl de lentilha com legumes</figcaption></figure>
+            <figure><img src="/img/refeicao-48.webp" width="480" height="480" alt="Salada de frango desfiado com grão-de-bico" loading="lazy" decoding="async"><figcaption>Salada de frango com grão-de-bico</figcaption></figure>
+            <figure><img src="/img/refeicao-02.webp" width="480" height="480" alt="Mingau de aveia com banana e canela" loading="lazy" decoding="async"><figcaption>Aveia com banana e canela</figcaption></figure>
           </div>
+          <ul class="diet-tags" aria-label="Dietas atendidas">
+            <li><span class="ms" aria-hidden="true">eco</span>Vegana</li><li>Vegetariana</li><li>Pescetariana</li><li>Sem carne vermelha</li><li>Low carb</li>
+          </ul>
+          <ul class="ticks dark">
+            <li><span class="ms" aria-hidden="true">no_food</span><span><b>Alergias:</b> amendoim, lactose, glúten e outras ficam fora das sugestões</span></li>
+            <li><span class="ms" aria-hidden="true">photo_camera</span><span><b>Foto do prato:</b> veja calorias e macros da refeição e ajuste os gramas</span></li>
+            <li><span class="ms" aria-hidden="true">restaurant</span><span><b>68 receitas</b> com foto e modo de preparo</span></li>
+          </ul>
         </div>
-        <div class="features">
-          <div class="feature"><i>🥗</i><div><b>68 receitas</b>Brasileiras, com foto e modo de preparo.</div></div>
-          <div class="feature"><i>🌱</i><div><b>Sua dieta</b>Vegana, vegetariana, low carb e mais.</div></div>
-          <div class="feature"><i>⚠️</i><div><b>Alergias</b>Amendoim, lactose, glúten: fora do cardápio.</div></div>
-          <div class="feature"><i>📸</i><div><b>Foto do prato</b>A IA estima os gramas, você ajusta.</div></div>
-        </div>
-      </div>
-      <div class="recipes">
-        <div class="recipe"><img src="/img/p-alimentacao.webp" alt=""><span>Frango, arroz e feijão</span></div>
-        <div class="recipe"><img src="/img/r-03.webp" alt=""><span>Iogurte com morango e granola</span></div>
-        <div class="recipe"><img src="/img/r-22.webp" alt=""><span>Sardinha com batata e salada</span></div>
-        <div class="recipe"><img src="/img/r-40.webp" alt=""><span>Smoothie de morango e iogurte</span></div>
       </div>
     </div>
   </section>
 
-  <section id="personal" class="band">
+  <!-- 6. Personal e academia (escuro) -->
+  <section id="personal" class="sec cream" aria-labelledby="t-personal">
     <div class="wrap">
+      <header class="head">
+        <p class="eyebrow">Para personal e academia</p>
+        <h2 id="t-personal">Seus alunos treinando pelo app. <em>E você ganha com isso.</em></h2>
+      </header>
+      <div class="pro">
+        <ol class="pro-steps">
+          <li><span class="ms" aria-hidden="true">person_add</span><b>Cadastro grátis</b><span>Personal e academia não pagam nada e recebem um código próprio.</span></li>
+          <li><span class="ms" aria-hidden="true">assignment</span><b>Monte os treinos</b><span>Escolha exercícios, rodadas e tempos e envie direto para o aluno.</span></li>
+          <li><span class="ms" aria-hidden="true">group</span><b>Acompanhe os alunos</b><span>Veja os treinos enviados e quais o aluno já concluiu.</span></li>
+          <li><span class="ms" aria-hidden="true">sell</span><b>Desconto para o aluno</b><span>Com o seu código, 10% de desconto na primeira cobrança do Premium.</span></li>
+        </ol>
+        <aside class="commission" aria-labelledby="t-comissao">
+          <span class="ms big-ico" aria-hidden="true">payments</span>
+          <p class="pct" id="t-comissao">20%</p>
+          <p>de cada mensalidade dos alunos que você indicar, <b>todo mês</b>, enquanto eles assinarem. Com 20 alunos no plano mensal (R$ 34,90), são cerca de <b>R$ 140 por mês</b>.</p>
+          <p class="fine">Pago por Pix, uma vez por mês, a partir de R$ 50, sobre assinaturas ativas há mais de 30 dias. Começa quando as assinaturas forem lançadas na Play Store.</p>
+          <a class="btn primary" href="https://wa.me/5541992341088?text=Sou%20personal%2Facademia%20e%20quero%20ser%20parceiro%20do%20Fox%20Move%20Fit" target="_blank" rel="noopener">Quero ser parceiro <span class="ms" aria-hidden="true">arrow_forward</span></a>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Como funciona (creme) -->
+  <section id="como-funciona" class="sec warm" aria-labelledby="t-como">
+    <div class="wrap">
+      <header class="head center">
+        <p class="eyebrow">Como funciona</p>
+        <h2 id="t-como">Seu plano em 2 minutos</h2>
+      </header>
+      <ol class="steps">
+        <li><span class="num">1</span><h3>Conte sobre você</h3><p>Objetivo, nível, tempo disponível, dores e preferências de alimentação.</p></li>
+        <li><span class="num">2</span><h3>Receba seu plano</h3><p>Treinos e cardápio feitos para você, com a sua meta de forma realista.</p></li>
+        <li><span class="num">3</span><h3>Evolua no seu ritmo</h3><p>O treino se ajusta ao seu esforço. Descansar também faz parte.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- 8. Prova social (verde-floresta) -->
+  <section id="depoimentos" class="sec sage" aria-labelledby="t-depo">
+    <div class="wrap">
+      <header class="head">
+        <p class="eyebrow">Comunidade</p>
+        <h2 id="t-depo">Feito para quem quer <em>começar de verdade.</em></h2>
+        <p class="sub">O app está em teste com os primeiros usuários. Os relatos abaixo são exemplos ilustrativos, não depoimentos reais.</p>
+      </header>
+      <!--
+        ATENÇÃO: DEPOIMENTOS DE DEMONSTRAÇÃO.
+        Não existem depoimentos reais no projeto ainda. Estes cartões são exemplos e estão marcados como "Exemplo" na página.
+        Substitua por relatos reais (com autorização por escrito) antes de remover o selo "Exemplo".
+      -->
+      <ul class="quotes">
+        <li class="quote">
+          <span class="badge">Exemplo</span>
+          <p class="stars" aria-label="Avaliação de exemplo: 5 de 5"><span class="ms" aria-hidden="true">star</span><span class="ms" aria-hidden="true">star</span><span class="ms" aria-hidden="true">star</span><span class="ms" aria-hidden="true">star</span><span class="ms" aria-hidden="true">star</span></p>
+          <blockquote>"Nunca consegui manter treino. Com 20 minutos em casa e o lembrete às 7h, fechei a primeira semana do desafio."</blockquote>
+          <p class="who"><b>Usuária de exemplo</b> · iniciante, 34 anos</p>
+          <p class="result"><span class="ms" aria-hidden="true">trending_up</span>Benefício: criar o hábito</p>
+        </li>
+        <li class="quote">
+          <span class="badge">Exemplo</span>
+          <p class="stars" aria-label="Avaliação de exemplo: 5 de 5"><span class="ms" aria-hidden="true">star</span><span class="ms" aria-hidden="true">star</span><span class="ms" aria-hidden="true">star</span><span class="ms" aria-hidden="true">star</span><span class="ms" aria-hidden="true">star</span></p>
+          <blockquote>"O modo dor trocou os exercícios que forçavam meu joelho. Voltei a treinar sem medo."</blockquote>
+          <p class="who"><b>Usuário de exemplo</b> · voltando a treinar, 41 anos</p>
+          <p class="result"><span class="ms" aria-hidden="true">healing</span>Benefício: treinar sem piorar a dor</p>
+        </li>
+        <li class="quote">
+          <span class="badge">Exemplo</span>
+          <p class="stars" aria-label="Avaliação de exemplo: 4 de 5"><span class="ms" aria-hidden="true">star</span><span class="ms" aria-hidden="true">star</span><span class="ms" aria-hidden="true">star</span><span class="ms" aria-hidden="true">star</span><span class="ms off" aria-hidden="true">star</span></p>
+          <blockquote>"Mando o treino dos meus alunos pelo app e vejo quem fez. Facilitou muito o acompanhamento."</blockquote>
+          <p class="who"><b>Personal de exemplo</b> · 20 alunos</p>
+          <p class="result"><span class="ms" aria-hidden="true">group</span>Benefício: acompanhar os alunos</p>
+        </li>
+      </ul>
+      <div class="community">
+        <p>Quer ajudar a construir o Fox Move Fit? Entre na lista de espera e participe dos testes.</p>
+        <a class="btn primary" href="https://wa.me/5541992341088?text=Quero%20entrar%20na%20lista%20de%20espera%20do%20Fox%20Move%20Fit" target="_blank" rel="noopener">Entrar na lista de espera <span class="ms" aria-hidden="true">arrow_forward</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. Dúvidas (branco quente) -->
+  <section id="duvidas" class="sec warm" aria-labelledby="t-duvidas">
+    <div class="wrap narrow">
+      <header class="head">
+        <p class="eyebrow">Dúvidas</p>
+        <h2 id="t-duvidas">Perguntas frequentes</h2>
+      </header>
+      <div class="faq">
+        <details><summary>É grátis?</summary><p>Os 7 primeiros dias do Desafio 28 dias, os treinos rápidos, a biblioteca de exercícios, as atividades com GPS e o registro de água e refeições são grátis. O Premium libera o desafio completo, o plano alimentar da semana e o histórico completo.</p></details>
+        <details><summary>Como cancelo a assinatura?</summary><p>No Google Play: toque na sua foto → Pagamentos e assinaturas → Assinaturas → Fox Move Fit → Cancelar. Você continua com o Premium até o fim do período pago.</p></details>
+        <details><summary>Vou ser cobrado no teste grátis?</summary><p>Não. Nada é cobrado nos 7 dias de teste e avisamos 2 dias antes da primeira cobrança.</p></details>
+        <details><summary>Sou iniciante. Consigo acompanhar?</summary><p>Sim. O treino começa leve, tem vídeo e explicação de cada exercício, e fica mais leve ou mais forte conforme o seu esforço.</p></details>
+        <details><summary>Meus dados ficam seguros?</summary><p>Usamos seus dados só para o app funcionar, sem anúncios e sem vender nada. Você pode exportar ou excluir tudo pelo app. Veja a <a href="/privacidade/">Política de Privacidade</a>.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. Chamada final -->
+  <section class="final" aria-labelledby="t-final">
+    <div class="wrap final-in">
       <div>
-        <div class="eyebrow">Para personal e academia</div>
-        <h2 style="margin-top:10px">Seus alunos treinando pelo app. <span class="accent">E você ganha com isso.</span></h2>
-        <ul class="ticks">
-          <li>Cadastro <strong>grátis</strong> para personal e academia</li>
-          <li>Monte treinos e envie direto para o celular do aluno</li>
-          <li>Veja quem treinou e quando</li>
-          <li>Seu aluno ganha 10% de desconto no primeiro mês com o seu código</li>
-        </ul>
+        <h2 id="t-final">Comece no seu ritmo.</h2>
+        <p>Entre na lista de espera e seja avisado quando o Fox Move Fit chegar ao Google Play.</p>
       </div>
-      <div class="card">
-        <div class="big accent">20%</div>
-        <p style="margin:10px 0 0;color:#c9d0cc">de cada mensalidade dos alunos que você indicar, <strong>todo mês</strong>, enquanto eles assinarem. Com 20 alunos no plano mensal, são cerca de <strong>R$ 140 por mês</strong>.</p>
-        <p style="margin:14px 0 0;font-size:14px;color:var(--muted)">No app: Menu → <strong>Sou personal ou academia</strong> → Quero meu código.</p>
+      <div class="final-ctas">
+        <a class="btn dark-btn" href="https://wa.me/5541992341088?text=Quero%20entrar%20na%20lista%20de%20espera%20do%20Fox%20Move%20Fit" target="_blank" rel="noopener"><span class="ms" aria-hidden="true">chat</span>Entrar na lista de espera</a>
+        <a class="btn line-btn" href="mailto:foxmovefit.app@gmail.com"><span class="ms" aria-hidden="true">mail</span>Falar por e-mail</a>
       </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="wrap">
-      <div class="head"><div><h2>Como funciona</h2><p class="sub">Em 2 minutos você já tem o seu plano.</p></div></div>
-      <div class="steps">
-        <div class="step"><h3>Conte sobre você</h3><p>Objetivo, nível, tempo disponível, dores e preferências de alimentação.</p></div>
-        <div class="step"><h3>Receba seu plano</h3><p>Treinos e cardápio feitos para você, respeitando seus limites.</p></div>
-        <div class="step"><h3>Evolua no seu ritmo</h3><p>O treino se ajusta ao seu esforço. Descansar também faz parte.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section style="padding-top:0">
-    <div class="join">
-      <div class="pic" role="img" aria-label="Pessoa correndo ao ar livre"></div>
-      <div class="txt">
-        <div><h2 style="font-size:28px">Fale com a gente</h2><p class="sub">Dúvidas, parcerias com personais e academias, imprensa.</p></div>
-        <div style="display:flex;flex-wrap:wrap;gap:10px">
-          <a class="btn primary" href="https://wa.me/5541992341088?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20o%20Fox%20Move%20Fit." target="_blank" rel="noopener">💬 WhatsApp</a>
-          <a class="btn ghost" href="mailto:foxmovefit.app@gmail.com">✉ E-mail</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="duvidas" style="padding-top:0">
-    <div class="wrap">
-      <div class="head"><div><h2>Dúvidas frequentes</h2></div></div>
-      <details><summary>É grátis?</summary><p>Os 7 primeiros dias do Desafio 28 dias, os treinos rápidos, a biblioteca de exercícios, as atividades com GPS e o registro de água e refeições são grátis. O Premium libera o desafio completo, o plano alimentar da semana e o histórico completo.</p></details>
-      <details><summary>Como cancelo a assinatura?</summary><p>No Google Play: toque na sua foto → Pagamentos e assinaturas → Assinaturas → Fox Move Fit → Cancelar. Você continua com o Premium até o fim do período pago.</p></details>
-      <details><summary>Vou ser cobrado no teste grátis?</summary><p>Não. Nada é cobrado nos 7 dias de teste e avisamos 2 dias antes da primeira cobrança.</p></details>
-      <details><summary>Sou iniciante. Consigo acompanhar?</summary><p>Sim. O treino começa leve, tem vídeo e explicação de cada exercício, e fica mais leve ou mais forte conforme o seu esforço.</p></details>
-      <details><summary>Meus dados ficam seguros?</summary><p>Usamos seus dados só para o app funcionar, sem anúncios e sem vender nada. Você pode exportar ou excluir tudo pelo app. Veja a <a href="/privacidade/">Política de Privacidade</a>.</p></details>
     </div>
   </section>
 </main>
 
-<footer>
-  <div class="wrap" style="display:block">
+<footer class="foot">
+  <div class="wrap">
     <div class="cols">
       <div>
-        <a class="brand" href="/" style="display:flex"><img src="/img/icone-192.png" alt=""><span><span class="fox">Fox</span> <span class="move">Move</span> <span class="fit">Fit</span></span></a>
-        <p style="margin:12px 0 0">Seu dia. Seu movimento.</p>
+        <a class="brand" href="/"><img src="/img/icone-192.png" alt="" width="36" height="36" loading="lazy"><span><span class="fox">Fox</span> <span class="move">Move</span> <span class="fit">Fit</span></span></a>
+        <p>Seu dia. Seu movimento.</p>
       </div>
-      <div><h4>App</h4><a href="#programas">Treinos</a><a href="#corrida">Corrida</a><a href="#alimentacao">Dieta</a><a href="#app">Recursos</a><a href="#personal">Personal</a></div>
-      <div><h4>Ajuda</h4><a href="#duvidas">Dúvidas</a><a href="https://wa.me/5541992341088" target="_blank" rel="noopener">WhatsApp</a><a href="mailto:foxmovefit.app@gmail.com">E-mail</a></div>
-      <div><h4>Legal</h4><a href="/privacidade/">Privacidade</a><a href="/termos/">Termos de uso</a><a href="/excluir-conta/">Excluir conta</a></div>
+      <nav aria-label="App"><h2>App</h2><a href="#programas">Treinos</a><a href="#corrida">Corrida</a><a href="#alimentacao">Alimentação</a><a href="#app">Recursos</a><a href="#personal">Personal</a></nav>
+      <nav aria-label="Ajuda"><h2>Ajuda</h2><a href="#duvidas">Dúvidas</a><a href="https://wa.me/5541992341088" target="_blank" rel="noopener">WhatsApp</a><a href="mailto:foxmovefit.app@gmail.com">E-mail</a></nav>
+      <nav aria-label="Legal"><h2>Legal</h2><a href="/privacidade/">Privacidade</a><a href="/termos/">Termos de uso</a><a href="/excluir-conta/">Excluir conta</a></nav>
     </div>
-    <p class="legal">© 2026 Fox Move Fit · Conteúdo educativo: não substitui médico, nutricionista ou educador físico.</p>
+    <p class="legal">© 2026 Fox Move Fit · Conteúdo educativo: não substitui médico, nutricionista ou profissional de educação física.</p>
   </div>
 </footer>
+
+<script>
+  // Menu do celular: abre/fecha com botão acessível (Esc fecha; clicar num link fecha).
+  (function () {
+    var b = document.querySelector('.menu-btn'), m = document.getElementById('menu');
+    if (!b || !m) return;
+    function set(open) { b.setAttribute('aria-expanded', open); b.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu'); b.firstElementChild.textContent = open ? 'close' : 'menu'; document.body.classList.toggle('menu-open', open); }
+    b.addEventListener('click', function () { set(b.getAttribute('aria-expanded') !== 'true'); });
+    m.addEventListener('click', function (e) { if (e.target.closest('a')) set(false); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && b.getAttribute('aria-expanded') === 'true') { set(false); b.focus(); } });
+  })();
+</script>
 </body>
 </html>
