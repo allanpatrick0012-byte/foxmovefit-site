@@ -256,6 +256,33 @@ em { font-style: italic; }
 .doc a { color: var(--orange-ink); font-weight: 600; }
 .doc strong { color: var(--ink); }
 
+/* Medalhas do mês */
+.t-bronze { --m: #b06a2c; } .t-prata { --m: #7f8b96; } .t-ouro { --m: #c9900f; } .t-platina { --m: #2f9fae; } .t-mestre { --m: #7a4fe0; }
+.tiers { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; margin-top: 26px; }
+.tiers li { display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 12px 4px; border-radius: 16px; background: var(--warm); border: 1px solid var(--line); text-align: center; }
+.tiers .ms { width: 44px; height: 44px; display: grid; place-items: center; border-radius: 50%; border: 3px solid var(--m); color: var(--m); background: color-mix(in srgb, var(--m) 14%, transparent); font-size: 24px; margin-bottom: 4px; }
+.tiers b { font-size: .9rem; }
+.tiers small { font-size: .78rem; color: var(--ink-2); }
+.rules-title { margin-top: 28px; }
+.rules-title + .ticks { margin-top: 12px; }
+.board { background: var(--warm); border-radius: 24px; padding: 20px; box-shadow: var(--shadow); border: 1px solid var(--line); }
+.board-head { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+.board-head > .ms { width: 44px; height: 44px; display: grid; place-items: center; border-radius: 12px; background: var(--orange); color: var(--black); font-size: 24px; }
+.board-head p { flex: 1; display: flex; flex-direction: column; line-height: 1.3; }
+.board-head p span { font-size: .85rem; color: var(--ink-2); }
+.board-head .badge { position: static; }
+.board-list { display: flex; flex-direction: column; gap: 8px; }
+.board-list li { display: flex; align-items: center; gap: 12px; padding: 10px 14px; border-radius: 14px; background: var(--cream); }
+.board-list li.me { background: color-mix(in srgb, var(--sage) 70%, var(--warm)); outline: 2px solid var(--forest); }
+.pos { width: 26px; font-weight: 800; color: var(--ink-2); }
+.medal { width: 38px; height: 38px; display: grid; place-items: center; border-radius: 50%; border: 2px solid var(--m); color: var(--m); background: color-mix(in srgb, var(--m) 14%, transparent); flex: none; }
+.medal .ms { font-size: 20px; }
+.board-list .who { flex: 1; display: flex; flex-direction: column; line-height: 1.25; }
+.board-list .who small { color: var(--ink-2); font-weight: 700; font-size: .8rem; }
+.board-list .d { font-weight: 700; font-size: .92rem; white-space: nowrap; }
+.board figcaption { display: flex; gap: 8px; align-items: flex-start; margin-top: 14px; font-size: .86rem; color: var(--ink-2); }
+.board figcaption .ms { font-size: 18px; color: var(--forest); }
+
 /* Tablet */
 @media (max-width: 1080px) {
   .programs { grid-template-columns: repeat(2, 1fr); }
@@ -326,6 +353,12 @@ em { font-style: italic; }
   .mapcard { position: relative; right: auto; width: auto; margin: -48px 12px 0; }
   .pro-steps li, .steps li { display: grid; grid-template-columns: 44px 1fr; column-gap: 14px; row-gap: 2px; padding: 16px; align-items: start; }
   .pro-steps .ms, .steps .num { grid-row: span 2; margin: 0; }
+  .tiers { gap: 4px; }
+  .tiers li { padding: 10px 2px; }
+  .tiers .ms { width: 36px; height: 36px; font-size: 20px; border-width: 2px; }
+  .tiers b { font-size: .78rem; }
+  .tiers small { font-size: .7rem; }
+  .board { padding: 14px; }
   .steps h3 { margin: 0; }
   .runstats { grid-template-columns: repeat(2, 1fr); row-gap: 8px; }
   .menu-day { padding: 18px; }
