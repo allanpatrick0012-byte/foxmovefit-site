@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src https://pqiustlomkfjwhdruaqz.supabase.co; base-uri 'none'; form-action 'none'">
+<title>Painel · Fox Move Fit</title>
+<link rel="stylesheet" href="/admin/admin.css">
+<link rel="icon" href="/favicon.png">
+</head>
+<body>
+<header class="top">
+  <span class="brand"><img src="/favicon.png" alt="" width="28" height="28"> Fox Move Fit <small>Painel</small></span>
+  <button id="sair" class="ghost" hidden>Sair</button>
+</header>
+<main>
+  <section id="entrar" class="card narrow">
+    <h1>Entrar no painel</h1>
+    <p class="muted">Acesso só para a equipe. Use a mesma conta do app.</p>
+    <label>E-mail <input id="email" type="email" autocomplete="username" required></label>
+    <label>Senha <input id="senha" type="password" autocomplete="current-password" required></label>
+    <button id="btn-entrar">Continuar</button>
+  </section>
+
+  <section id="cadastrar-2fa" class="card narrow" hidden>
+    <h1>Ative a verificação em duas etapas</h1>
+    <p class="muted">Obrigatória para ver o painel. Abra o Google Authenticator (ou outro app de código), toque em <b>+</b> e leia o QR code.</p>
+    <img id="qr" alt="QR code para o app autenticador" width="200" height="200">
+    <p class="muted small">Sem câmera? Digite esta chave no app: <code id="segredo"></code></p>
+    <label>Código de 6 dígitos <input id="codigo-novo" inputmode="numeric" autocomplete="one-time-code" maxlength="6"></label>
+    <button id="btn-ativar">Ativar e entrar</button>
+  </section>
+
+  <section id="verificar-2fa" class="card narrow" hidden>
+    <h1>Código de verificação</h1>
+    <p class="muted">Digite o código de 6 dígitos do seu app autenticador.</p>
+    <label>Código <input id="codigo" inputmode="numeric" autocomplete="one-time-code" maxlength="6"></label>
+    <button id="btn-verificar">Entrar</button>
+  </section>
+
+  <p id="erro" class="erro" role="alert" hidden></p>
+
+  <section id="painel" hidden>
+    <div class="head">
+      <h1>Visão geral</h1>
+      <span class="muted small" id="atualizado"></span>
+      <button id="btn-atualizar" class="ghost">Atualizar</button>
+    </div>
+    <div class="kpis" id="kpis"></div>
+    <div class="card">
+      <h2>Cadastros por dia (últimos 30 dias)</h2>
+      <div class="bars" id="barras"></div>
+    </div>
+    <div class="card">
+      <h2>Últimos cadastros</h2>
+      <p class="muted small">E-mail mascarado por segurança. Atividade = último treino, corrida ou registro de água e refeições.</p>
+      <div class="scroll"><table>
+        <thead><tr><th>Entrou em</th><th>Nome</th><th>E-mail</th><th>Login</th><th>Questionário</th><th>Treina em</th><th>Última atividade</th><th>Assinatura</th></tr></thead>
+        <tbody id="usuarios"></tbody>
+      </table></div>
+    </div>
+    <p class="muted small">Por segurança, a sessão fica só nesta aba e encerra após 15 minutos sem uso.</p>
+  </section>
+</main>
+<script src="/admin/admin.js"></script>
+</body>
+</html>
